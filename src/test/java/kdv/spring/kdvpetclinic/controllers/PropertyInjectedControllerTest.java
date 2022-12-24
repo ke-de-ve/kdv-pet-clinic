@@ -1,6 +1,6 @@
 package kdv.spring.kdvpetclinic.controllers;
 
-import kdv.spring.kdvpetclinic.services.GreetingServiceImpl;
+import kdv.spring.kdvpetclinic.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ class PropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         propertyInjectedController = new PropertyInjectedController();
-        propertyInjectedController.greetingService = new GreetingServiceImpl();
+        propertyInjectedController.greetingService = new ConstructorGreetingService();
     }
 
     @Test
