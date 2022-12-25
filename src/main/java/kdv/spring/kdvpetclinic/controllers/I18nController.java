@@ -1,15 +1,15 @@
 package kdv.spring.kdvpetclinic.controllers;
 
 import kdv.spring.kdvpetclinic.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MyController {
+public class I18nController {
 
-    // no need to add qualifier if we want to use primary bean
     private final GreetingService greetingService;
 
-    public MyController(GreetingService greetingService) {
+    public I18nController(@Qualifier(("i18nService")) GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
