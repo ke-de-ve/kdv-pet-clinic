@@ -1,9 +1,6 @@
 package kdv.spring.kdvpetclinic;
 
-import kdv.spring.kdvpetclinic.controllers.ConstructorInjectedController;
-import kdv.spring.kdvpetclinic.controllers.MyController;
-import kdv.spring.kdvpetclinic.controllers.PropertyInjectedController;
-import kdv.spring.kdvpetclinic.controllers.SetterInjectedController;
+import kdv.spring.kdvpetclinic.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class KdvPetClinicApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(KdvPetClinicApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.printf("I18n: %s \n", i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 		System.out.printf("Primary bean: %s \n", myController.sayHello());
