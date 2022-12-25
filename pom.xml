@@ -53,6 +53,7 @@
 				<version>2.5.3</version>
 				<configuration>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>  <!-- autonumber sub-modules -->
 				</configuration>
 			</plugin>
 <!--			<plugin>-->
@@ -74,7 +75,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/ke-de-ve/kdv-pet-clinic.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 </project>
