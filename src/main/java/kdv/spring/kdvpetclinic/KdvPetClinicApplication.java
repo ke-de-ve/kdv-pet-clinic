@@ -11,6 +11,9 @@ public class KdvPetClinicApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(KdvPetClinicApplication.class, args);
 
+		PetController petController = (PetController) ctx.getBean("petController");
+		System.out.println(petController.whichPetIsTheBest());
+
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.printf("I18n: %s \n", i18nController.sayHello());
 
