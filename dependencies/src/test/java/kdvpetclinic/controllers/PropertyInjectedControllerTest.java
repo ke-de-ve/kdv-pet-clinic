@@ -1,4 +1,4 @@
-package kdv.spring.kdvpetclinic.controllers;
+package kdvpetclinic.controllers;
 
 import kdv.spring.dependencies.controllers.PropertyInjectedController;
 import kdv.spring.dependencies.services.ConstructorGreetingService;
