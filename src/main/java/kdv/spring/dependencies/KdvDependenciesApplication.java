@@ -1,4 +1,4 @@
-package kdv.spring.kdvpetclinic;
+package kdv.spring.dependencies;
 
 import kdv.spring.dependencies.controllers.*;
 import org.springframework.boot.SpringApplication;
@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class KdvPetClinicApplication {
+public class KdvDependenciesApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(KdvPetClinicApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(KdvDependenciesApplication.class, args);
 
 		PetController petController = (PetController) ctx.getBean("petController");
 		System.out.println(petController.whichPetIsTheBest());

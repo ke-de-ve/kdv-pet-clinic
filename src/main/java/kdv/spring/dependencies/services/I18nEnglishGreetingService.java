@@ -1,14 +1,13 @@
-package kdv.spring.kdvpetclinic.services;
+package kdv.spring.dependencies.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service("i18nService")
-@Profile("ES")
-public class I18nSpanishGreetingService implements GreetingService{
-
+@Profile({"EN", "default"})
+public class I18nEnglishGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "Hola Mundo - ES";
+        return "Hello World - EN";
     }
 }

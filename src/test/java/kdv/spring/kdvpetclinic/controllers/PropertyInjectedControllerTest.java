@@ -1,6 +1,7 @@
 package kdv.spring.kdvpetclinic.controllers;
 
-import kdv.spring.kdvpetclinic.services.ConstructorGreetingService;
+import kdv.spring.dependencies.controllers.PropertyInjectedController;
+import kdv.spring.dependencies.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

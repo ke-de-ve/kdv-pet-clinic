@@ -1,4 +1,4 @@
-package kdv.spring.kdvpetclinic.services;
+package kdv.spring.dependencies.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

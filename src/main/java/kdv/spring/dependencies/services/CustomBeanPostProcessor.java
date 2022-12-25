@@ -1,4 +1,4 @@
-package kdv.spring.kdvpetclinic.services;
+package kdv.spring.dependencies.services;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

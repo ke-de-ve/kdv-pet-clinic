@@ -1,4 +1,4 @@
-package kdv.spring.kdvpetclinic.services;
+package kdv.spring.dependencies.services;
 
 public interface GreetingService {
 
