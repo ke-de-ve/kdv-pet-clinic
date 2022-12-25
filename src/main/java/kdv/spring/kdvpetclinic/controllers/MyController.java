@@ -1,13 +1,19 @@
 package kdv.spring.kdvpetclinic.controllers;
 
+import kdv.spring.kdvpetclinic.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String sayHello() {
-        System.out.println("hello World !");
+    // no need to add qualifier if we want to use primary bean
+    private final GreetingService greetingService;
 
-        return "Hi, Folks!";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello() {
+        return greetingService.sayGreeting();
     }
 }

@@ -15,8 +15,7 @@ public class KdvPetClinicApplication {
 		ApplicationContext ctx = SpringApplication.run(KdvPetClinicApplication.class, args);
 
 		MyController myController = (MyController) ctx.getBean("myController");
-		String greeting = myController.sayHello();
-		System.out.printf("greeting: %s \n", greeting);
+		System.out.printf("Primary bean: %s \n", myController.sayHello());
 
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
 		System.out.println("2..." + propertyInjectedController.getGreeting());
