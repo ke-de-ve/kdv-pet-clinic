@@ -1,6 +1,7 @@
 package kdv.spring.di;
 
 import kdv.spring.di.controllers.*;
+import kdv.spring.di.datasource.FakeDataSource;
 import kdv.spring.di.services.PrototypeBean;
 import kdv.spring.di.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -45,6 +46,10 @@ public class KdvDependenciesApplication {
 		System.out.println("prototypeBean1: " + prototypeBean1.getMyScope() + " >> " + prototypeBean1);
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println("prototypeBean2: " + prototypeBean2.getMyScope() + " >> " + prototypeBean2);
+
+		System.out.println("\n-------- Properties ---------");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource);
 	}
 
 }
