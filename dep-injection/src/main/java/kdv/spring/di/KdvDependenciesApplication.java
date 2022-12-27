@@ -12,7 +12,11 @@ import org.springframework.context.ApplicationContext;
 public class KdvDependenciesApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Starting application ...");
+
 		ApplicationContext ctx = SpringApplication.run(KdvDependenciesApplication.class, args);
+
+		System.out.println("\n --- Created ApplicationContext ----------------------------------------------------");
 
 		System.out.println("\n -------- Controllers ---------");
 
