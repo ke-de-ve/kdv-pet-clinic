@@ -1,8 +1,5 @@
 package kdv.spring.dependencies.services;
 
-//comment it out to demo configuration approach with  GreetingServiceConfig  class
-//@Service
-//@Primary
 public class PrimaryGreetingService implements GreetingService {
 
     @Override

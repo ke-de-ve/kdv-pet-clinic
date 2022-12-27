@@ -1,6 +1,5 @@
 package kdv.spring.pets;
 
-//  @Service  -- pretend this is 3rd party
 public class PetServiceFactory {
 
     public PetService getPetService(String petType) {

@@ -2,8 +2,6 @@ package kdv.spring.dependencies.services;
 
 import kdv.spring.dependencies.repositories.EnglishGreetingRepository;
 
-//@Service("i18nService")
-//@Profile({"EN", "default"})
 public class I18nEnglishGreetingService implements GreetingService{
 
     private final EnglishGreetingRepository englishGreetingRepository;
