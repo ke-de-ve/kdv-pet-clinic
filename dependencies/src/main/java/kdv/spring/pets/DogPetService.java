@@ -1,10 +1,7 @@
 package kdv.spring.pets;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
-
-@Service
-@Profile({"dog", "default"})
+// @Service -- pretend this is 3rd party
+// @Profile({"dog", "default"})
 public class DogPetService implements PetService {
 
     @Override
