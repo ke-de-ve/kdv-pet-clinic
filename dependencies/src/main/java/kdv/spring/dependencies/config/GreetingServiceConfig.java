@@ -5,12 +5,10 @@ import kdv.spring.dependencies.repositories.EnglishGreetingRepositoryImpl;
 import kdv.spring.dependencies.services.*;
 import kdv.spring.pets.PetService;
 import kdv.spring.pets.PetServiceFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@ImportResource("classpath:kdv-di-config.xml")
 public class GreetingServiceConfig {
 
     @Bean
@@ -53,7 +51,7 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
+    // @Bean  now defined in  kdv-di-config.xml  file
     ConstructorGreetingService constructorGreetingService() {
         return new ConstructorGreetingService();
     }
