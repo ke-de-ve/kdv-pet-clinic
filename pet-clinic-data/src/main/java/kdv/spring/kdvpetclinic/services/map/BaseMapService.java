@@ -1,10 +1,21 @@
 package kdv.spring.kdvpetclinic.services.map;
 
+import kdv.spring.kdvpetclinic.model.BaseEntity;
+
 import java.util.*;
 
-public abstract class BaseMapService<T, ID> {
+public abstract class BaseMapService<T extends BaseEntity, ID extends Long> {
 
-    protected Map<ID, T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
+
+    private Long getNextId() {
+        Set<Long> keys = map.keySet();
+        if (keys.size() == 0) {
+            return 1L;
+        } else {
+            return Collections.max(keys) + 1;
+        }
+    }
 
     Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -14,8 +25,16 @@ public abstract class BaseMapService<T, ID> {
         return map.get(id);
     }
 
-    T save(ID id, T entity) {
-        map.put(id, entity);
+    T save(T entity) {
+        if(entity != null) {
+            if(entity.getId() == null) {
+                entity.setId(getNextId());
+            }
+            map.put(entity.getId(), entity);
+        } else {
+            throw new RuntimeException("Object can not be bull.");
+        }
+
         return entity;
     }
 
@@ -26,4 +45,5 @@ public abstract class BaseMapService<T, ID> {
     void delete(T entity) {
         map.entrySet().removeIf(e -> Objects.equals(e.getValue(), entity));
     }
+
 }

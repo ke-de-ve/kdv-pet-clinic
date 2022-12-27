@@ -15,6 +15,11 @@ public class OwnerServiceMap extends BaseMapService<Owner, Long> implements Owne
     }
 
     @Override
+    public Owner save(Owner entity) {
+        return super.save(entity);
+    }
+
+    @Override
     public void deleteById(Long id) {
         super.deleteById(id);
     }
@@ -27,12 +32,6 @@ public class OwnerServiceMap extends BaseMapService<Owner, Long> implements Owne
     @Override
     public Owner findBiId(Long id) {
         return super.findById(id);
-    }
-
-    @Override
-    public Owner save(Owner entity) {
-        super.save(entity.getId(), entity);
-        return entity;
     }
 
     @Override
