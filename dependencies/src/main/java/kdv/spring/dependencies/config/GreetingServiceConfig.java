@@ -1,5 +1,7 @@
 package kdv.spring.dependencies.config;
 
+import kdv.spring.dependencies.repositories.EnglishGreetingRepository;
+import kdv.spring.dependencies.repositories.EnglishGreetingRepositoryImpl;
 import kdv.spring.dependencies.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,9 +18,14 @@ public class GreetingServiceConfig {
     }
 
     @Bean
+    EnglishGreetingRepository englishGreetingRepository() {
+        return new EnglishGreetingRepositoryImpl();
+    }
+
+    @Bean   // ("i18nService") can use this or name of the method
     @Profile({"EN", "default"})
-    I18nEnglishGreetingService i18nService() {
-        return new I18nEnglishGreetingService();
+    I18nEnglishGreetingService i18nService(EnglishGreetingRepository englishGreetingRepository) {
+        return new I18nEnglishGreetingService(englishGreetingRepository);
     }
 
     @Bean
