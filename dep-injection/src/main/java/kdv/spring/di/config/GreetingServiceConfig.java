@@ -6,18 +6,20 @@ import kdv.spring.di.repositories.EnglishGreetingRepositoryImpl;
 import kdv.spring.di.services.*;
 import kdv.spring.pets.PetService;
 import kdv.spring.pets.PetServiceFactory;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
 @Configuration
 @ImportResource("classpath:kdv-di-config.xml")
+@EnableConfigurationProperties(DiConstructorConfig.class)
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(DiConfiguration diConfiguration) {
+    FakeDataSource fakeDataSource(DiConstructorConfig diConstructorConfig) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(diConfiguration.getUsername());
-        fakeDataSource.setPassword(diConfiguration.getPassword());
-        fakeDataSource.setJdbcurl(diConfiguration.getJdbcurl());
+        fakeDataSource.setUsername(diConstructorConfig.getUsername());
+        fakeDataSource.setPassword(diConstructorConfig.getPassword());
+        fakeDataSource.setJdbcurl(diConstructorConfig.getJdbcurl());
         System.out.println("---> " + fakeDataSource);
         return fakeDataSource;
     }

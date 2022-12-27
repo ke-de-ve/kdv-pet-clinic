@@ -1,6 +1,7 @@
 package kdv.spring.di;
 
 import kdv.spring.di.config.DiConfiguration;
+import kdv.spring.di.config.DiConstructorConfig;
 import kdv.spring.di.controllers.*;
 import kdv.spring.di.datasource.FakeDataSource;
 import kdv.spring.di.services.PrototypeBean;
@@ -59,6 +60,10 @@ public class KdvDependenciesApplication {
 		System.out.println("\n-------- Config Properties Bean ---------");
 		DiConfiguration diConfiguration = ctx.getBean(DiConfiguration.class);
 		System.out.println(diConfiguration);
+
+		System.out.println("\n-------- Constructor Config Properties Bean ---------");
+		DiConstructorConfig diConstructorConfig = ctx.getBean(DiConstructorConfig.class);
+		System.out.println(diConstructorConfig);
 
 		System.out.println();
 	}
