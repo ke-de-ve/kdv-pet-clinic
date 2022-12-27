@@ -1,0 +1,5 @@
+di:
+  username: TestYmlUser
+  password: TestYmlPass
+  jdbcurl: jdbc:mysql:123.456.789.001:3306/test_yml_db
+

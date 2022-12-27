@@ -1,0 +1,4 @@
+di:
+  username: DevYmlUser
+  password: DevYmlPass
+  jdbcurl: jdbc:mysql:123.456.789.001:3306/dev_yml_db
