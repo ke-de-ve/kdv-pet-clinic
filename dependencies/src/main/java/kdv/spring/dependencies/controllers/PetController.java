@@ -1,6 +1,6 @@
 package kdv.spring.dependencies.controllers;
 
-import kdv.spring.dependencies.services.PetService;
+import kdv.spring.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 @Controller
