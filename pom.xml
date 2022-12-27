@@ -21,7 +21,7 @@
 	<modules>
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
-		<module>dependencies</module>
+		<module>dep-injection</module>
 	</modules>
 
 	<properties>

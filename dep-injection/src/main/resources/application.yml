@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active:
+      - EN
+      - cat
+      - prod
+
+di:
+  username: YmlUser
+  password: YmlPass
+  jdbcurl: jdbc:mysql:123.456.789.001:3306/yml_db
+
+---
+# ---  is new yml "file"  (multiple yaml documents in the same stream)
+spring:
+  profiles: prod
+di:
+  username: ProdYmlUser
+  password: ProdYmlPass
+  jdbcurl: jdbc:mysql:123.456.789.001:3306/prod_yml_db
