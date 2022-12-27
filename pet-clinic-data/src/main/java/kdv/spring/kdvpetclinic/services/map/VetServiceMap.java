@@ -2,9 +2,11 @@ package kdv.spring.kdvpetclinic.services.map;
 
 import kdv.spring.kdvpetclinic.model.Vet;
 import kdv.spring.kdvpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends BaseMapService<Vet, Long> implements VetService{
 
     @Override
