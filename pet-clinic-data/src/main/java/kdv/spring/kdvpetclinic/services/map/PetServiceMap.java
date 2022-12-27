@@ -5,7 +5,7 @@ import kdv.spring.kdvpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends BaseMapService<Pet, Long> implements PetService<Pet, Long> {
+public class PetServiceMap extends BaseMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
