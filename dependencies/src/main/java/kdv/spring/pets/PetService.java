@@ -1,4 +1,4 @@
-package kdv.spring.dependencies.services;
+package kdv.spring.pets;
 
 public interface PetService {
 

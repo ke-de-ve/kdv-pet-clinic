@@ -4,6 +4,11 @@ import kdv.spring.dependencies.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+// after moving classes to  kdv.spring.pets  package
+// we are getting error:   Parameter 0 of constructor in kdv.spring.dependencies.controllers.PetController required a bean of type 'kdv.spring.pets.PetService' that could not be found.
+@ComponentScan(basePackages = {"kdv.spring.dependencies", "kdv.spring.pets"})  //explicitly list all packages that have to be scanned by Spring Framework
 
 @SpringBootApplication
 public class KdvDependenciesApplication {
