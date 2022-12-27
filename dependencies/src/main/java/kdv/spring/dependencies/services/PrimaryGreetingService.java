@@ -1,10 +1,8 @@
 package kdv.spring.dependencies.services;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
-
-@Service
-@Primary
+//comment it out to demo configuration approach with  GreetingServiceConfig  class
+//@Service
+//@Primary
 public class PrimaryGreetingService implements GreetingService {
 
     @Override
