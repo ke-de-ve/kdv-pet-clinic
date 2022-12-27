@@ -20,12 +20,6 @@ public class VetServiceMap extends BaseMapService<Vet, Long> implements VetServi
     }
 
     @Override
-    public Vet save(Vet vet) {
-        super.save(vet.getId(), vet);
-        return vet;
-    }
-
-    @Override
     public void delete(Vet vet) {
         super.delete(vet);
     }
@@ -33,5 +27,10 @@ public class VetServiceMap extends BaseMapService<Vet, Long> implements VetServi
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Vet save(Vet entity) {
+        return super.save(entity);
     }
 }
