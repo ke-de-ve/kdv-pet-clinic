@@ -1,5 +1,7 @@
 package kdv.spring.kdvpetclinic.model;
 
+import lombok.Builder;
+
 import java.util.Set;
 
 public class Owner extends Person {
@@ -11,6 +13,19 @@ public class Owner extends Person {
     private String telephone;
 
     private Set<Pet> pets;
+
+    public Owner() {
+        super();
+    }
+
+    @Builder
+    public Owner(Long id, String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
+        super(id, firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 
     public String getAddress() {
         return address;
