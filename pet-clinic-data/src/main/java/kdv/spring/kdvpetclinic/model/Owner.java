@@ -1,14 +1,16 @@
 package kdv.spring.kdvpetclinic.model;
 
+import java.util.Set;
+
 public class Owner extends Person {
 
-    private String name;
+    private Set<Pet> pets;
 
-    public String getName() {
-        return name;
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
