@@ -1,9 +1,13 @@
 package kdv.spring.kdvpetclinic.model;
 
 import lombok.Builder;
+import lombok.Getter;
 
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
+@Getter
 public class Owner extends Person {
 
     private String address;
@@ -12,7 +16,7 @@ public class Owner extends Person {
 
     private String telephone;
 
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();;
 
     public Owner() {
         super();
@@ -24,35 +28,19 @@ public class Owner extends Person {
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.pets = pets;
-    }
-
-    public String getAddress() {
-        return address;
+        this.pets = Objects.requireNonNullElseGet(pets, HashSet::new);
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getCity() {
-        return city;
-    }
-
     public void setCity(String city) {
         this.city = city;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    public Set<Pet> getPets() {
-        return pets;
     }
 
     public void setPets(Set<Pet> pets) {
