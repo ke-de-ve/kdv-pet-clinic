@@ -1,0 +1,23 @@
+close issue #9:
+    Add WebJars for Bootstrap CSS and JQuery  (not needed it anymore)
+
+add issues:
+    Create Pet Type, Pet, and Visit entities
+    Create Vet Specialty entity, associate it to Vet
+    Add contact info properties to Owner
+    Create PetType Service
+    Create Pet Service
+    Create Specialty Service
+    Add PetTypes in with bootstrap (startup)
+    Enhance Owners with contact info and Pets
+    Create Specialties, add to Vets on Startup
+    Implement Base Entity (JPA)
+    Convert Owners to JPA Entities
+    Convert Vets to JPA Entities
+    Create Visit Entity
+    Add Spring Data JPA Repositories
+    Create Spring Data JPA Service for Owners
+    Create Spring Data JPA Service for Vets
+    Create Spring Data JPA Service for PetType
+    Create Spring Data JPA Service for Pet
+    Create Spring Data JPA Service for VetSpecialty
