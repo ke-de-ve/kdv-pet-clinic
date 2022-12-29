@@ -1,6 +1,8 @@
 package kdv.spring.kdvpetclinic.services.map;
 
+import kdv.spring.kdvpetclinic.model.Speciality;
 import kdv.spring.kdvpetclinic.model.Vet;
+import kdv.spring.kdvpetclinic.services.SpecialityService;
 import kdv.spring.kdvpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,12 @@ import java.util.Set;
 
 @Service
 public class VetServiceMap extends BaseMapService<Vet, Long> implements VetService{
+
+    private final SpecialityService specialityService;
+
+    public VetServiceMap(SpecialityService specialityService) {
+        this.specialityService = specialityService;
+    }
 
     @Override
     public Set<Vet> findAll() {
@@ -30,7 +38,16 @@ public class VetServiceMap extends BaseMapService<Vet, Long> implements VetServi
     }
 
     @Override
-    public Vet save(Vet entity) {
-        return super.save(entity);
+    public Vet save(Vet vet) {
+
+        if (vet.getSpecialities().size() > 0) {
+            vet.getSpecialities().forEach(speciality -> {
+                if (speciality.getId() == null) {
+                    Speciality savedSpeciality = specialityService.save(speciality);
+                    speciality.setId(savedSpeciality.getId());
+                }
+            });
+        }
+        return super.save(vet);
     }
 }

@@ -2,7 +2,6 @@ package kdv.spring.kdvpetclinic.services.map;
 
 import kdv.spring.kdvpetclinic.model.Owner;
 import kdv.spring.kdvpetclinic.model.Pet;
-import kdv.spring.kdvpetclinic.model.PetType;
 import kdv.spring.kdvpetclinic.services.OwnerService;
 import kdv.spring.kdvpetclinic.services.PetService;
 import kdv.spring.kdvpetclinic.services.PetTypeService;
