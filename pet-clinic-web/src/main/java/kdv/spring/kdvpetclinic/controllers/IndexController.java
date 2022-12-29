@@ -11,4 +11,9 @@ public class IndexController {
         // tell Thymeleafe to search for index template
         return "index";
     }
+
+    @RequestMapping("/oups")
+    public String oupsHandler() {
+        return "notimplemented";
+    }
 }
