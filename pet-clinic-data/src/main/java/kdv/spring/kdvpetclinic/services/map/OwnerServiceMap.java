@@ -5,11 +5,13 @@ import kdv.spring.kdvpetclinic.model.Pet;
 import kdv.spring.kdvpetclinic.services.OwnerService;
 import kdv.spring.kdvpetclinic.services.PetService;
 import kdv.spring.kdvpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("map")
 public class OwnerServiceMap extends BaseMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

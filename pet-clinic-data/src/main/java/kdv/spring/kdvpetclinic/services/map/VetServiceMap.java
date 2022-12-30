@@ -4,11 +4,13 @@ import kdv.spring.kdvpetclinic.model.Speciality;
 import kdv.spring.kdvpetclinic.model.Vet;
 import kdv.spring.kdvpetclinic.services.SpecialityService;
 import kdv.spring.kdvpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("map")
 public class VetServiceMap extends BaseMapService<Vet, Long> implements VetService{
 
     private final SpecialityService specialityService;
