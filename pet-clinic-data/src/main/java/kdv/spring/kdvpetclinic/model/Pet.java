@@ -3,12 +3,11 @@ package kdv.spring.kdvpetclinic.model;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -26,6 +25,9 @@ public class Pet extends BaseEntity{
     private Owner owner;
 
     private LocalDate birthDate;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
 
     public Pet() {
         super();
@@ -50,5 +52,13 @@ public class Pet extends BaseEntity{
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }

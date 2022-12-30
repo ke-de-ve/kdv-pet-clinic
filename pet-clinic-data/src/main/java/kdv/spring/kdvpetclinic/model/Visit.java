@@ -2,8 +2,14 @@ package kdv.spring.kdvpetclinic.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
 
     @DateTimeFormat(pattern = "yyyy-mm-dd")
@@ -11,6 +17,8 @@ public class Visit extends BaseEntity {
 
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
