@@ -3,13 +3,18 @@ package kdv.spring.kdvpetclinic.model;
 import lombok.Builder;
 import lombok.Getter;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
 @Getter
+@Table(name = "vets")
 public class Vet extends Person {
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialities", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "speciality_id"))
     private Set<Speciality> specialities = new HashSet<>();
 
     public Vet() {
