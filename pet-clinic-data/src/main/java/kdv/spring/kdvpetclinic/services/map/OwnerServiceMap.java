@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-@Profile("map")
+@Profile({"default", "map"})
 public class OwnerServiceMap extends BaseMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
