@@ -1,39 +1,29 @@
 package kdv.spring.kdvpetclinic.services.map;
 
 import kdv.spring.kdvpetclinic.model.Visit;
-import kdv.spring.kdvpetclinic.repositories.VisitRepository;
 import kdv.spring.kdvpetclinic.services.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("map")
+@Profile({"default", "map"})
 public class VisitServiceMap extends BaseMapService<Visit, Long> implements VisitService {
-
-    private final VisitRepository visitRepository;
-
-    public VisitServiceMap(VisitRepository visitRepository) {
-        this.visitRepository = visitRepository;
-    }
 
     @Override
     public Set<Visit> findAll() {
-        Set<Visit> visits = new HashSet<>();
-        visitRepository.findAll().forEach(visits::add);
-        return visits;
+        return super.findAll();
     }
 
     @Override
     public void deleteById(Long id) {
-        visitRepository.deleteById(id);
+        super.deleteById(id);
     }
 
     @Override
     public void delete(Visit visit) {
-        visitRepository.delete(visit);
+        super.delete(visit);
     }
 
     @Override
@@ -42,11 +32,11 @@ public class VisitServiceMap extends BaseMapService<Visit, Long> implements Visi
             visit.getPet().getOwner() == null || visit.getPet().getOwner().getId() == null) {
             throw new RuntimeException("Invalid visit data");
         }
-        return visitRepository.save(visit);
+        return super.save(visit);
     }
 
     @Override
     public Visit findBiId(Long id) {
-        return visitRepository.findById(id).orElse(null);
+        return super.findById(id);
     }
 }
