@@ -1,47 +1,37 @@
 package kdv.spring.kdvpetclinic.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * Created by jt on 7/29/18.
+ */
 @Entity
 @Table(name = "visits")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Visit extends BaseEntity {
 
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @Column(name = "date")
     private LocalDate date;
 
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    @Override
+    public String toString() {
+        return "Visit{ id=" + getId() +
+                ", date=" + date +
+                ", description='" + description + '\'' +
+                ", pet=" + pet +
+                '}';
     }
 }
