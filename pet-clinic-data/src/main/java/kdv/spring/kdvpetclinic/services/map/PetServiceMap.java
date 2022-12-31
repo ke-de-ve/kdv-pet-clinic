@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-@Profile("map")
+@Profile({"default", "map"})
 public class PetServiceMap extends BaseMapService<Pet, Long> implements PetService {
 
     @Override

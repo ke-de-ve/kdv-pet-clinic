@@ -39,6 +39,7 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded PetTypes.");
 
         Owner owner1 = Owner.builder().firstName("John").lastName("Doe").address("123 Some Str").city("Miami").telephone("123-456-7890").build();
+        ownerService.save(owner1);
         Pet sharik = Pet.builder().name("Sharik").owner(owner1).petType(savedDogPetType).birthDate(LocalDate.now()).build();
         petService.save(sharik);
         Pet boots = Pet.builder().name("Boots").owner(owner1).petType(savedCatPetType).birthDate(LocalDate.now()).build();
@@ -48,20 +49,15 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = Owner.builder().firstName("Jane").lastName("Doe").address("321 Other Str").city("Boston").telephone("321-654-0987").build();
+        ownerService.save(owner2);
         Pet murka = Pet.builder().name("Murka").owner(owner2).petType(savedCatPetType).birthDate(LocalDate.now()).build();
         murka = petService.save(murka);
         owner2.getPets().add(murka);
         ownerService.save(owner2);
         System.out.println("Loaded Owners.");
 
-
-        Visit murkaVisit = new Visit();
-        murkaVisit.setPet(murka);
-        murkaVisit.setDate(LocalDate.now());
-        murkaVisit.setDescription("Sneeze Kitty");
-        // Visit.builder().pet(murka).date(LocalDate.now()).description("Sneeze Kitty").build();
-        petService.findAll().forEach(pet -> System.out.println(pet.toString()));
-        visitService.save(murkaVisit);
+        visitService.save(Visit.builder().pet(murka).date(LocalDate.now()).description("Sneeze Kitty").build());
+        System.out.println("Loaded Visit.");
 
         Vet vet1 = Vet.builder().firstName("Mary").lastName("Vets").build();
         vet1.getSpecialities().add(radiology);
