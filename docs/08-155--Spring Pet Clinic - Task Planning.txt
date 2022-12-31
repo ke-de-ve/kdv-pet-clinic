@@ -1,0 +1,14 @@
+Add following Issues:
+    Create Visit Map Service
+    Create Visit Spring Data JPA Service
+    Load Visits on startup in Bootstrap
+    Create CRUD Tests for Owner Map Service
+    Create CRUD Tests for Owner JPA Service
+    Add project Lombok and Refactor
+    Create Spring MVC Tests for Owner Controller
+    Display Owner record (HTML)
+    Implement find Owner
+    Add ability to add or update an Owner
+    Add ability to add or update a Pet
+    Add ability to add or update a Visit
+    Add ability to add or update a Vet
