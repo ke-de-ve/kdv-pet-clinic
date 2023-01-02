@@ -1,17 +1,17 @@
 package kdv.spring.kdvpetclinic.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "owners")
 public class Owner extends Person {
 
@@ -23,10 +23,6 @@ public class Owner extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
-
-    public Owner() {
-        super();
-    }
 
     @Builder
     public Owner(Long id, String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
