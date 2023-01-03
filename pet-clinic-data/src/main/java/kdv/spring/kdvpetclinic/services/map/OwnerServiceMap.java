@@ -8,6 +8,7 @@ import kdv.spring.kdvpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Set;
 
 @Service
@@ -70,7 +71,10 @@ public class OwnerServiceMap extends BaseMapService<Owner, Long> implements Owne
 
     @Override
     public Owner findByLastName(String lastName) {
-        //TODO: implement findByLastName !
-        return null;
+        return findAll()
+                .stream()
+                .filter(owner -> Objects.equals(lastName, owner.getLastName()))
+                .findFirst()
+                .orElse(null);
     }
 }
