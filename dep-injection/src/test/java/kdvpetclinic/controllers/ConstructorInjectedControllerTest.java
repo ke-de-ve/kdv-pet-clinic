@@ -15,7 +15,7 @@ class ConstructorInjectedControllerTest {
     }
 
     @Test
-    void getGreeting() {
+    public void getGreeting() {
         System.out.println(controller.getGreeting());
     }
 }
