@@ -5,8 +5,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest   // load Spring context to run Integration Tests
+@ExtendWith(SpringExtension.class)   // load Spring context to run Integration Tests
 class KdvPetClinicApplicationTests {
 
 	@Test
