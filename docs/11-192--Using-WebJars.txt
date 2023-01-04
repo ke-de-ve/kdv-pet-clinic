@@ -1,0 +1,9 @@
+https://www.webjars.org/
+
+WebJars are client-side web libraries (e.g. jQuery & Bootstrap) packaged into JAR (Java Archive) files.
+Explicitly and easily manage the client-side dependencies in JVM-based web applications
+Use JVM-based build tools (e.g. Maven, Gradle, sbt, ...) to download your client-side dependencies
+Know which client-side dependencies you are using
+Transitive dependencies are automatically resolved and optionally loaded via RequireJS
+Deployed on Maven Central
+Public CDN, generously provided by:
